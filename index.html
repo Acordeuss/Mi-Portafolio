@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Leal Téllez | Informática & Desarrollo Regional</title>
+    <!-- Fuente moderna Inter + Fira Code para el toque Dev -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Canvas de partículas de fondo para el toque futurista -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Glassmorphic -->
+    <header class="header">
+        <a href="#inicio" class="logo">
+            <span class="logo-tag">&lt;CLT/&gt;</span>
+            Carlos <span>Leal Téllez</span>
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+        
+        <nav class="nav" id="nav-menu">
+            <a href="#inicio" class="active">Inicio</a>
+            <a href="#conoceme">Conóceme</a>
+            <a href="#intereses">Áreas de Interés</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="https://github.com/Acordeuss" target="_blank" class="nav-github">GitHub ↗</a>
+            <a href="assets/CV_Carlos_Leal_Tellez.pdf" target="_blank" class="btn-cv-nav">📄 Ver CV</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-content reveal">
+                <div class="badge-tag glow-badge">📍 Región de Los Lagos • Puerto Montt • Chiloé</div>
+                <h1 class="hero-title">Liderando la Informática en la <span class="region-highlight">Región de Los Lagos</span></h1>
+                <p class="hero-subtitle">
+                    Estudiante de 2° año de Analista Programador en Duoc UC (Puerto Montt). Especializado en desarrollo de software y lógica de programación con <strong>Python</strong>, <strong>Java (POO)</strong> y <strong>JavaScript</strong>, junto a bases de datos SQL. Enfocado en crear soluciones eficientes que impulsen el desarrollo tecnológico en la Región de Los Lagos.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary">Explorar Proyectos <span class="arrow">→</span></a>
+                    <a href="assets/CV_Carlos_Leal_Tellez.pdf" target="_blank" class="btn btn-outline btn-cv">
+                        <span class="icon">📥</span> Ver CV (PDF)
+                    </a>
+                </div>
+
+                <div class="quick-contact">
+                    <span>✉️ <a href="mailto:car.lealt@duocuc.cl">car.lealt@duocuc.cl</a></span>
+                    <span>📞 <a href="tel:+56996356622">+56 9 9635 6622</a></span>
+                    <span>🐙 <a href="https://github.com/Acordeuss" target="_blank">github.com/Acordeuss</a></span>
+                </div>
+            </div>
+
+            <!-- FOTO CON GLOW Y TAGS FLOTANTES -->
+            <div class="hero-photo-wrapper reveal">
+                <div class="photo-glow"></div>
+                <div class="photo-frame">
+                    <img src="img/perfil.png.png" alt="Carlos Leal Téllez - CLT">
+                </div>
+                <div class="floating-card card-python">
+                    <span class="card-icon">🐍</span>
+                    <div>
+                        <strong>Python & Java</strong>
+                        <p>Lógica POO & Scripting</p>
+                    </div>
+                </div>
+                <div class="floating-card card-salmon">
+                    <span class="card-icon">🐟</span>
+                    <div>
+                        <strong>Sector Acuícola</strong>
+                        <p>Soluciones Marítimas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS BAR -->
+        <section class="stats-bar reveal">
+            <div class="stat-item">
+                <span class="stat-number">Duoc UC</span>
+                <span class="stat-label">2° Año Analista Programador</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Python & Java</span>
+                <span class="stat-label">Lógica POO, Scripting y Fundamentos Web</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Sector Marítimo</span>
+                <span class="stat-label">Soluciones para la Industria Salmonera</span>
+            </div>
+        </section>
+
+        <!-- TERMINAL CON EFECTO DE TIPEADO DINÁMICO (ÚNICO) -->
+        <section class="terminal-container reveal">
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <div class="dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">nodo_los_lagos.py</span>
+                </div>
+                <div class="terminal-body">
+                    <pre><code id="typewriter-code"></code><span class="cursor">█</span></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONÓCEME / SOBRE MÍ -->
+        <section class="seccion" id="conoceme">
+            <div class="section-heading-wrapper reveal">
+                <span class="section-num">01.</span>
+                <div>
+                    <span class="mini-title">TRAYECTORIA Y PERFIL</span>
+                    <h2 class="section-heading">Conóceme</h2>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <article class="card glass-card reveal">
+                    <h3>Perfil Académico</h3>
+                    <p><strong>Carrera:</strong> Analista Programador / Informática</p>
+                    <p><strong>Institución:</strong> Duoc UC — Sede Puerto Montt</p>
+                    <p><strong>Nivel:</strong> 2° Año en curso</p>
+                    <br>
+                    <p>Mi formación se ha llevado a cabo con un gran interés en la ejecución limpia de código y lógica de desarrollo, explorando la Programación Orientada a Objetos en <strong>Python</strong> y <strong>Java</strong>. Anhelo aplicar esta experiencia para convertirme en un referente tecnológico del sur, enfocado en la Región de Los Lagos, con especial interés en las industrias salmoneras y empresas que requieran automatización de procesos.</p>
+                </article>
+
+                <article class="card glass-card reveal">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul class="skills-list">
+                        <li><strong>Lenguajes Principales:</strong> Python, Java, JavaScript, HTML5, CSS3</li>
+                        <li><strong>Paradigmas:</strong> Programación Orientada a Objetos (POO) & Lógica Algorítmica</li>
+                        <li><strong>En Aprendizaje:</strong> Kotlin & Desarrollo Móvil</li>
+                        <li><strong>Bases de Datos & Herramientas:</strong> SQL, Git, GitHub, VS Code</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE INTERÉS -->
+        <section class="seccion" id="intereses">
+            <div class="section-heading-wrapper reveal">
+                <span class="section-num">02.</span>
+                <div>
+                    <span class="mini-title">ENFOQUE ESTRATÉGICO</span>
+                    <h2 class="section-heading">Áreas de Proyección</h2>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <article class="card glass-card interactive-card reveal">
+                    <span class="badge-tag">Tecnología Acuícola</span>
+                    <h3>Industria Salmonera</h3>
+                    <p>Interesado en la gestión e integración de sistemas informáticos para centros de cultivo, trazabilidad de alimento, monitoreo ambiental y optimización logística en la Región de Los Lagos.</p>
+                </article>
+
+                <article class="card glass-card interactive-card reveal">
+                    <span class="badge-tag">Gestión de Información</span>
+                    <h3>Bases de Datos & Backend</h3>
+                    <p>Apasionado por el diseño de esquemas eficientes, integridad relacional y desarrollo de lógica con Python y SQL para soportar la toma de decisiones empresariales.</p>
+                </article>
+
+                <article class="card glass-card interactive-card reveal">
+                    <span class="badge-tag">Entretenimiento e Interactividad</span>
+                    <h3>Desarrollo Web & Software</h3>
+                    <p>Exploración en la creación de interfaces responsivas, mecánicas interactivas y lógica de sistemas digitales atractivos e intuitivos para el usuario.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section class="seccion" id="proyectos">
+            <div class="section-heading-wrapper reveal">
+                <span class="section-num">03.</span>
+                <div>
+                    <span class="mini-title">PORTAFOLIO DE CÓDIGO</span>
+                    <h2 class="section-heading">Mis Proyectos</h2>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <article class="card glass-card project-card reveal">
+                    <div class="card-header-top">
+                        <span class="project-tag">Python / Lógica POO</span>
+                        <span class="project-status">● ACTIVO</span>
+                    </div>
+                    <h3>Gestor Logístico Automatizado</h3>
+                    <p>Aplicación desarrollada en Python aplicando Programación Orientada a Objetos para el control de inventario y optimización de flujos de datos.</p>
+                    <a href="https://github.com/Acordeuss" target="_blank" class="card-link">Ver en GitHub &rarr;</a>
+                </article>
+
+                <article class="card glass-card project-card reveal">
+                    <div class="card-header-top">
+                        <span class="project-tag">HTML5 / CSS / JS</span>
+                        <span class="project-status online">● ONLINE</span>
+                    </div>
+                    <h3>Portal Web Adaptativo</h3>
+                    <p>Estructuración de maquetación web moderna utilizando estándares de semántica HTML5, Flexbox y diseño interactivo sin librerías pesadas.</p>
+                    <a href="https://github.com/Acordeuss" target="_blank" class="card-link">Ver en GitHub &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="seccion contacto-section" id="contacto">
+            <div class="contact-box glass-card reveal">
+                <span class="section-num">04. CONTACTO</span>
+                <h2>¿Tienes un proyecto, práctica académica o propuesta? <span>Hablemos.</span></h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Información Directa</h3>
+                        <p><strong>Correo Duoc UC:</strong><br><a href="mailto:car.lealt@duocuc.cl">car.lealt@duocuc.cl</a></p>
+                        <p><strong>Teléfono / WhatsApp:</strong><br><a href="tel:+56996356622">+56 9 9635 6622</a></p>
+                        <p><strong>Ubicación:</strong><br>Puerto Montt, Región de Los Lagos, Chile</p>
+                    </div>
+
+                    <form action="mailto:car.lealt@duocuc.cl" method="POST" enctype="text/plain" class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Tu Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar Correo Directo</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Carlos Leal Téllez • Portafolio de Informática e Innovación desde la Región de Los Lagos, Chile.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

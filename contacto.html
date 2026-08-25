@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Carlos Leal Téllez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">&lt;CLT/&gt;</a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="conoceme.html">Sobre Mí</a>
+            <a href="intereses.html">Áreas de Interés</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Contacto</h1>
+        <p class="page-subtitle">¿Tienes un proyecto, práctica académica o propuesta? Hablemos.</p>
+
+        <div class="grid-container" style="margin-bottom: 2.5rem;">
+            <!-- Tarjeta de Datos Directos -->
+            <article class="card">
+                <h3>Información Institucional</h3>
+                <p><strong>Correo Duoc UC:</strong></p>
+                <p><a href="mailto:car.lealt@duocuc.cl" style="color: var(--primary); text-decoration: none;">car.lealt@duocuc.cl</a></p>
+                <br>
+                <p><strong>Teléfono / WhatsApp:</strong></p>
+                <p><a href="tel:+56996356622" style="color: var(--primary); text-decoration: none;">+56 9 9635 6622</a></p>
+                <br>
+                <p><strong>Ubicación:</strong> Puerto Montt, Región de Los Lagos, Chile</p>
+            </article>
+
+            <!-- Formulario de Mensaje -->
+            <article class="card">
+                <h3>Enviarme un Mensaje</h3>
+                <form action="mailto:car.lealt@duocuc.cl" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o empresa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Tu Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Enviar Correo</button>
+                </form>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Carlos Leal Téllez • Duoc UC Sede Puerto Montt | <a href="mailto:car.lealt@duocuc.cl" style="color: var(--text-muted);">car.lealt@duocuc.cl</a></p>
+    </footer>
+</body>
+</html>
