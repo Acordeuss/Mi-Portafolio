@@ -21,7 +21,7 @@ if (menuToggle && navMenu) {
 // ==========================================
 const revealElements = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
@@ -29,10 +29,38 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-revealElements.forEach(el => observer.observe(el));
+revealElements.forEach(el => revealObserver.observe(el));
 
 // ==========================================
-// 3. CANVAS DE PARTÍCULAS CYBERNEÓN EN EL FONDO
+// 3. ENMARCADO AUTOMÁTICO DE NAVEGACIÓN (SCROLL SPY)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav a[href^='#']");
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute("id");
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentId}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }, {
+        rootMargin: "-30% 0px -60% 0px",
+        threshold: 0
+    });
+
+    sections.forEach((section) => spyObserver.observe(section));
+});
+
+// ==========================================
+// 4. CANVAS DE PARTÍCULAS MORADO CYBERNEÓN EN EL FONDO
 // ==========================================
 const canvas = document.getElementById("bg-canvas");
 if (canvas) {
@@ -65,7 +93,7 @@ if (canvas) {
         }
 
         draw() {
-            ctx.fillStyle = `rgba(220, 20, 60, ${this.opacity})`;
+            ctx.fillStyle = `rgba(176, 132, 245, ${this.opacity})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -88,7 +116,7 @@ if (canvas) {
 }
 
 // ==========================================
-// 4. EFECTO DE TIPEADO EN VIVO PARA EL TERMINAL
+// 5. EFECTO DE TIPEADO EN VIVO PARA EL TERMINAL
 // ==========================================
 const codeText = `class DevRegional:
     def __init__(self):
@@ -113,5 +141,94 @@ function typeCode() {
     }
 }
 
-// Inicia el tipeado dinámico cuando la página termina de cargar
 window.addEventListener("DOMContentLoaded", typeCode);
+
+// ==========================================
+// 6. CONTROL DESPLEGABLE DEL VISOR DE CV
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggle-cv-btn");
+    const pdfWrapper = document.getElementById("pdf-wrapper");
+    const pdfIframe = document.getElementById("pdf-iframe");
+    const btnText = document.getElementById("toggle-btn-text");
+
+    if (toggleBtn && pdfWrapper && pdfIframe) {
+        toggleBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            const isExpanded = pdfWrapper.classList.contains("expanded");
+
+            if (isExpanded) {
+                pdfWrapper.classList.remove("expanded");
+                if (btnText) btnText.textContent = "Ver Curriculum en pantalla";
+            } else {
+                if (!pdfIframe.src) {
+                    const dataSrc = pdfIframe.getAttribute("data-src");
+                    if (dataSrc) pdfIframe.src = dataSrc;
+                }
+                pdfWrapper.classList.add("expanded");
+                if (btnText) btnText.textContent = "Ocultar Curriculum";
+            }
+        });
+    }
+});
+
+// ==========================================
+// 7. ENVÍO DE FORMULARIO DE CONTACTO VÍA AJAX (FORMSPREE)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault(); // Evita la redirección a la página de Formspree
+
+            // Deshabilita el botón temporalmente
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Enviando...";
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Muestra el mensaje de agradecimiento
+                    formStatus.style.display = "block";
+                    formStatus.style.padding = "1rem";
+                    formStatus.style.borderRadius = "8px";
+                    formStatus.style.backgroundColor = "rgba(72, 187, 120, 0.15)";
+                    formStatus.style.border = "1px solid #48bb78";
+                    formStatus.style.color = "#48bb78";
+                    formStatus.innerHTML = "<strong>¡Gracias por ponerte en contacto con el Portafolio de Carlos!</strong><br>Tu mensaje ha sido enviado exitosamente. Te responderé a la brevedad.";
+
+                    // Reinicia los campos del formulario
+                    contactForm.reset();
+                } else {
+                    throw new Error("Ocurrió un problema al enviar el mensaje.");
+                }
+            } catch (error) {
+                // Manejo de errores
+                formStatus.style.display = "block";
+                formStatus.style.padding = "1rem";
+                formStatus.style.borderRadius = "8px";
+                formStatus.style.backgroundColor = "rgba(245, 101, 101, 0.15)";
+                formStatus.style.border = "1px solid #f56565";
+                formStatus.style.color = "#f56565";
+                formStatus.innerHTML = 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo o escribe a <a href="mailto:acordeusleal@outlook.es" style="color: inherit; text-decoration: underline;">acordeusleal@outlook.es</a>.';
+            } finally {
+                // Restablece el estado del botón
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar Mensaje Directo";
+            }
+        });
+    }
+});

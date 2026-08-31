@@ -1,28 +1,46 @@
 <!DOCTYPE html>
+<!-- Declara el tipo de documento como HTML5 para que el navegador interprete el estándar moderno -->
 <html lang="es">
 <head>
+    <!-- Define la codificación de caracteres en UTF-8 para admitir tildes, letras 'ñ' y caracteres especiales -->
     <meta charset="UTF-8">
+    
+    <!-- Configura el Viewport: vital para la adaptabilidad (Responsive Design) en dispositivos móviles y tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la pestaña que aparecerá en el navegador -->
     <title>Carlos Leal Téllez | Informática & Desarrollo Regional</title>
-    <!-- Fuente moderna Inter + Fira Code -->
+    
+    <!-- Preconexión a servidores de Google Fonts para reducir la latencia al cargar tipografías externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importación de fuentes tipográficas: 'Inter' para texto general y 'Fira Code' para texto tipo consola/código -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Librería CDN FontAwesome (v6.4.0): Proporciona íconos multipropósito y marcas estables -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enlace a la hoja de estilos externa en CSS donde se define el diseño visual y animaciones -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Canvas de partículas de fondo -->
+    <!-- Elemento Canvas HTML5: Utilizado por JavaScript (script.js) para renderizar un fondo dinámico interactivo con partículas -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Header Glassmorphic -->
+    <!-- Encabezado Principal (Header): Utiliza un estilo 'Glassmorphic' (efecto cristal esmerilado) definido en CSS -->
     <header class="header">
+        <!-- Logotipo personal que actúa como enlace de retorno al inicio de la página -->
         <a href="#inicio" class="logo">
             <span class="logo-tag">&lt;CLT/&gt;</span>
             Carlos <span>Leal Téllez</span>
         </a>
+        
+        <!-- Botón Toggle: Permite desplegar el menú de navegación en dispositivos de pantalla pequeña (Móvil) -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
         
+        <!-- Menú de navegación principal con enlaces de ancla (#) que desplazan la página hacia cada sección -->
         <nav class="nav" id="nav-menu">
             <a href="#inicio" class="active">Inicio</a>
             <a href="#conoceme">Conóceme</a>
@@ -30,21 +48,32 @@
             <a href="#intereses">Áreas de Interés</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
-            <a href="https://github.com/Acordeuss" target="_blank" class="nav-github">GitHub ↗</a>
-            <a href="assets/CarlosLealT-CV.pdf" target="_blank" class="btn-cv-nav">📄 Ver CV</a>
+            <!-- Enlace externo seguro hacia el perfil público de GitHub -->
+            <a href="https://github.com/Acordeuss" target="_blank" rel="noopener noreferrer" class="nav-github">
+                <i class="fa-brands fa-github" style="vertical-align: middle; margin-right: 4px;"></i> GitHub ↗
+            </a>
         </nav>
     </header>
 
+    <!-- Contenido Principal de la página web que engloba las secciones informativas -->
     <main>
-        <!-- HERO SECTION -->
+        
+        <!-- SECCIÓN 0: HERO SECTION (Sección de presentación o portada) -->
         <section class="hero-section" id="inicio">
+            <!-- Bloque de texto principal con clase 'reveal' para aplicar efectos de animación al hacer scroll -->
             <div class="hero-content reveal">
+                <!-- Etiqueta decorativa con luz de neón (glow) para contextualizar la ubicación geográfica -->
                 <div class="badge-tag glow-badge">📍 Región de Los Lagos • Puerto Montt / Puerto Varas</div>
+                
+                <!-- Título principal con un span destacado enfocado en la identidad profesional regional -->
                 <h1 class="hero-title">Liderando la Informática en la <span class="region-highlight">Región de Los Lagos</span></h1>
+                
+                <!-- Subtítulo o resumen del perfil técnico profesional -->
                 <p class="hero-subtitle">
                     Estudiante de <strong>Ingeniería en Informática</strong> en Duoc UC. Destacado por una rápida adaptación, responsabilidad y enfoque analítico en la resolución de problemas. Experiencia en roles operativos, logística con sistemas y proyección hacia la industria salmonera y automatización.
                 </p>
 
+                <!-- Botones de Acción Rápida (Call to Action / CTA) para dirigir al usuario a secciones clave -->
                 <div class="hero-actions">
                     <a href="#proyectos" class="btn btn-primary">Explorar Proyectos <span class="arrow">→</span></a>
                     <a href="#cv-visor" class="btn btn-outline btn-cv">
@@ -52,26 +81,34 @@
                     </a>
                 </div>
 
+                <!-- Bloque de contacto rápido mediante enlaces funcionales mailto:, tel: y de red social -->
                 <div class="quick-contact">
                     <span>✉️ <a href="mailto:acordeusleal@outlook.es">acordeusleal@outlook.es</a></span>
-                    <span>📞 <a href="tel:+56996359926">+56 9 9635 9926</a></span>
-                    <span>🐙 <a href="https://github.com/Acordeuss" target="_blank">github.com/Acordeuss</a></span>
+                    <span>📞 <a href="tel:+56996359970">+56 9 9635 9970</a></span>
+                    <span><i class="fa-brands fa-github icon-tech" style="font-size: 1.1rem; vertical-align: middle;"></i> <a href="https://github.com/Acordeuss" target="_blank" rel="noopener noreferrer">github.com/Acordeuss</a></span>
                 </div>
             </div>
 
-            <!-- FOTO CON GLOW -->
+            <!-- Bloque visual del Hero: Foto de perfil con marco decorativo y elementos flotantes -->
             <div class="hero-photo-wrapper reveal">
+                <!-- Capa CSS trasera con sombra/resplandor (glow) de fondo -->
                 <div class="photo-glow"></div>
+                
+                <!-- Contenedor de la imagen de perfil con object-fit para evitar distorsión de la fotografía -->
                 <div class="photo-frame">
-                    <img src="img/perfil.png.png" alt="Carlos Leal Téllez - CLT" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="img/perfil.png" alt="Carlos Leal Téllez - CLT" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
+                
+                <!-- Tarjeta flotante interactiva 1: Muestra tecnologías destacadas -->
                 <div class="floating-card card-python">
-                    <span class="card-icon">🐍</span>
+                    <span class="card-icon"><i class="fa-brands fa-python" style="color: #3776AB;"></i></span>
                     <div>
                         <strong>Python & Kotlin</strong>
                         <p>Desarrollo & Lógica</p>
                     </div>
                 </div>
+                
+                <!-- Tarjeta flotante interactiva 2: Muestra enfoque estratégico regional -->
                 <div class="floating-card card-salmon">
                     <span class="card-icon">🐟</span>
                     <div>
@@ -82,7 +119,7 @@
             </div>
         </section>
 
-        <!-- STATS BAR -->
+        <!-- BARRA DE ESTADÍSTICAS / DESTACADOS: Presenta métricas y datos rápidos mediante un Grid flexible -->
         <section class="stats-bar reveal">
             <div class="stat-item">
                 <span class="stat-number">Duoc UC</span>
@@ -98,9 +135,10 @@
             </div>
         </section>
 
-        <!-- TERMINAL -->
+        <!-- SECCIÓN TERMINAL INTERACTIVA: Simula una consola de comandos interactiva mediante JavaScript -->
         <section class="terminal-container reveal">
             <div class="terminal-card">
+                <!-- Barra superior estilo macOS / Linux con botones de ventana y nombre de script -->
                 <div class="terminal-header">
                     <div class="dots">
                         <span class="dot red"></span>
@@ -109,14 +147,16 @@
                     </div>
                     <span class="terminal-title">nodo_los_lagos.py</span>
                 </div>
+                <!-- Cuerpo de la consola donde script.js inyectará el texto tipo 'máquina de escribir' (Typewriter) -->
                 <div class="terminal-body">
-                    <pre><code id="typewriter-code"></code><span class="cursor">█</span></pre>
+                    <pre><code id="typewriter-code"></code></pre>
                 </div>
             </div>
         </section>
 
-        <!-- CONÓCEME / SOBRE MÍ -->
+        <!-- SECCIÓN 01: CONÓCEME / SOBRE MÍ -->
         <section class="seccion" id="conoceme">
+            <!-- Encabezado de sección numerado y estandarizado -->
             <div class="section-heading-wrapper reveal">
                 <span class="section-num">01.</span>
                 <div>
@@ -125,29 +165,44 @@
                 </div>
             </div>
 
+            <!-- Contenedor en cuadrícula (Grid) para dividir la información del perfil y habilidades -->
             <div class="grid-container">
+                <!-- Tarjeta con diseño Glassmorphism (efecto cristal) conteniendo el perfil profesional -->
                 <article class="card glass-card reveal">
                     <h3>Perfil Profesional</h3>
                     <p><strong>Carrera:</strong> Ingeniería en Informática</p>
                     <p><strong>Institución:</strong> Duoc UC — Sede Puerto Montt</p>
                     <p><strong>Ubicación:</strong> Puerto Montt / Puerto Varas</p>
                     <br>
-                    <p>Estudiante caracterizado por una marcada atención al detalle y capacidad de análisis operativo[cite: 2]. Con experiencia práctica en trabajo bajo presión, atención de sistemas (Toteat) y gestión logística de bodega[cite: 2]. Enfocado en canalizar estas competencias hacia el desarrollo de software, la automatización y el sector de la industria salmonera[cite: 2].</p>
+                    <p>Estudiante caracterizado por una marcada atención al detalle y capacidad de análisis operativo. Con experiencia práctica en trabajo bajo presión, atención de sistemas (Toteat) y gestión logística de bodega. Enfocado en canalizar estas competencias hacia el desarrollo de software, la automatización y el sector de la industria salmonera.</p>
                 </article>
 
+                <!-- Tarjeta conteniendo las competencias técnicas e íconos de tecnologías -->
                 <article class="card glass-card reveal">
                     <h3>Habilidades & Competencias</h3>
                     <ul class="skills-list">
-                        <li><strong>Competencias Clave:</strong> Atención al detalle, adaptabilidad rápida, trabajo en equipo, trabajo bajo presión[cite: 2].</li>
-                        <li><strong>Sistemas & Operativa:</strong> Manejo de sistema Toteat, logística, bodega y control de inventario[cite: 2].</li>
-                        <li><strong>Tecnología:</strong> Python, Kotlin, Java, HTML5, CSS3, SQL, Git & GitHub.</li>
-                        <li><strong>Intereses:</strong> Industria Salmonera, Automatización y Robótica, Marketing[cite: 2].</li>
+                        <li><strong>Competencias Clave:</strong> Atención al detalle, adaptabilidad rápida, trabajo en equipo, trabajo bajo presión.</li>
+                        <li><strong>Sistemas & Operativa:</strong> Manejo de sistema Toteat, logística, bodega y control de inventario.</li>
+                        <li>
+                            <strong>Tecnologías & Herramientas:</strong>
+                            <div style="display: flex; gap: 1rem; font-size: 1.6rem; margin-top: 0.6rem; flex-wrap: wrap; align-items: center;">
+                                <i class="fa-brands fa-python" title="Python" style="color: #3776AB;"></i>
+                                <svg title="Kotlin" style="width: 1.4rem; height: 1.4rem; fill: #7F52FF; vertical-align: middle;" viewBox="0 0 24 24"><path d="M24 24H0V0h24L12 12Z"/></svg>
+                                <i class="fa-brands fa-java" title="Java" style="color: #5382a1;"></i>
+                                <i class="fa-brands fa-html5" title="HTML5" style="color: #E34F26;"></i>
+                                <i class="fa-brands fa-css3-alt" title="CSS3" style="color: #1572B6;"></i>
+                                <i class="fa-solid fa-database" title="SQL / MySQL" style="color: #00758F;"></i>
+                                <i class="fa-brands fa-git-alt" title="Git" style="color: #F05032;"></i>
+                                <i class="fa-brands fa-github" title="GitHub" style="color: #ffffff;"></i>
+                            </div>
+                        </li>
+                        <li><strong>Intereses:</strong> Industria Salmonera, Automatización y Robótica, Marketing.</li>
                     </ul>
                 </article>
             </div>
         </section>
 
-        <!-- VISOR DE CURRÍCULUM VITAE -->
+        <!-- SECCIÓN 02: VISOR DE CURRÍCULUM VITAE -->
         <section class="seccion" id="cv-visor">
             <div class="section-heading-wrapper reveal">
                 <span class="section-num">02.</span>
@@ -158,29 +213,36 @@
             </div>
 
             <div class="glass-card reveal" style="padding: 1.5rem; border-radius: 16px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                    <p style="margin: 0; color: #a0aec0;">Visualiza mi CV oficial o ábrelo directamente:</p>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="assets/CarlosLealT-CV.pdf" target="_blank" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
-                            🔗 Abrir en pestaña nueva
+                <!-- Panel de controles y botones para interaccionar con el documento PDF -->
+                <div class="cv-header-actions">
+                    <p style="margin: 0; color: #a0aec0;">Visualiza mi CV oficial o descárgalo directamente:</p>
+                    <div class="cv-buttons">
+                        <!-- Botón controlado por JavaScript para desplegar u ocultar el iframe en pantalla -->
+                        <button id="toggle-cv-btn" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            👁️ <span id="toggle-btn-text">Ver Curriculum en pantalla</span>
+                        </button>
+                        <!-- Enlace directo para abrir el PDF en una nueva pestaña del navegador -->
+                        <a href="assets/CarlosLealT-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
+                            🔗 Abrir PDF
                         </a>
+                        <!-- Enlace de descarga directa del documento utilizando el atributo 'download' -->
                         <a href="assets/CarlosLealT-CV.pdf" download class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
                             📥 Descargar PDF
                         </a>
                     </div>
                 </div>
                 
-                <!-- Visor iframe apuntando a la carpeta assets -->
-                <div style="width: 100%; height: 750px; border-radius: 12px; overflow: hidden; background: #1a1e2e;">
-                    <iframe src="assets/CarlosLealT-CV.pdf" width="100%" height="100%" style="border: none;" title="Vista previa del CV">
-                        Tu navegador no permite la visualización directa de PDFs. 
-                        <a href="assets/CarlosLealT-CV.pdf" target="_blank" style="color: #00f2fe; text-decoration: underline;">Haz clic aquí para abrirlo</a>.
-                    </iframe>
+                <!-- Contenedor desplegable (colapsado por defecto) para incrustar el PDF -->
+                <div id="pdf-wrapper" class="pdf-wrapper collapsed">
+                    <div class="pdf-container">
+                        <!-- iFrame para renderizar el archivo PDF en el navegador. Usa data-src para carga diferida (Lazy Loading) -->
+                        <iframe id="pdf-iframe" data-src="assets/CarlosLealT-CV.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH" title="Vista previa del CV" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ÁREAS DE INTERÉS -->
+        <!-- SECCIÓN 03: ÁREAS DE INTERÉS / PROYECCIÓN -->
         <section class="seccion" id="intereses">
             <div class="section-heading-wrapper reveal">
                 <span class="section-num">03.</span>
@@ -190,20 +252,36 @@
                 </div>
             </div>
 
+            <!-- Grilla interactiva de 3 columnas para destacar las industrias objetivo -->
             <div class="grid-container">
-                <article class="card glass-card interactive-card reveal">
+                <!-- Tarjeta 1: Industria Salmonera / Acuícola -->
+                <article class="card glass-card interactive-card skill-card reveal">
+                    <div class="card-icon-wrapper">
+                        <!-- Ícono FontAwesome de servidor/redes para representar TI aplicada a la industria -->
+                        <i class="fa-solid fa-server icon-tech"></i>
+                    </div>
                     <span class="badge-tag">Tecnología Acuícola</span>
                     <h3>Industria Salmonera</h3>
-                    <p>Interesado en la automatización, gestión e integración de sistemas informáticos para centros de cultivo y trazabilidad logística en el sur de Chile[cite: 2].</p>
+                    <p>Interesado en la automatización, gestión e integración de sistemas informáticos para centros de cultivo y trazabilidad logística en el sur de Chile.</p>
                 </article>
 
-                <article class="card glass-card interactive-card reveal">
+                <!-- Tarjeta 2: Automatización & Robótica -->
+                <article class="card glass-card interactive-card skill-card reveal">
+                    <div class="card-icon-wrapper">
+                        <!-- Ícono FontAwesome de robot para representar automatización -->
+                        <i class="fa-solid fa-robot icon-tech"></i>
+                    </div>
                     <span class="badge-tag">Innovación</span>
                     <h3>Automatización & Robótica</h3>
-                    <p>Enfocado en la creación de procesos automatizados para optimizar el flujo de trabajo en operaciones industriales y comerciales[cite: 2].</p>
+                    <p>Enfocado en la creación de procesos automatizados para optimizar el flujo de trabajo en operaciones industriales y comerciales.</p>
                 </article>
 
-                <article class="card glass-card interactive-card reveal">
+                <!-- Tarjeta 3: Desarrollo Móvil & Web -->
+                <article class="card glass-card interactive-card skill-card reveal">
+                    <div class="card-icon-wrapper">
+                        <!-- Ícono FontAwesome de etiquetas de código para representación de software -->
+                        <i class="fa-solid fa-code icon-tech"></i>
+                    </div>
                     <span class="badge-tag">Desarrollo Móvil & Web</span>
                     <h3>Aplicaciones & Software</h3>
                     <p>Desarrollo de interfaces intuitivas y lógica limpia orientada a resolver problemas prácticos del usuario y la empresa.</p>
@@ -211,7 +289,7 @@
             </div>
         </section>
 
-        <!-- PROYECTOS -->
+        <!-- SECCIÓN 04: PORTAFOLIO DE PROYECTOS -->
         <section class="seccion" id="proyectos">
             <div class="section-heading-wrapper reveal">
                 <span class="section-num">04.</span>
@@ -222,66 +300,117 @@
             </div>
 
             <div class="grid-container">
+                <!-- Proyecto 1: Python -->
                 <article class="card glass-card project-card reveal">
                     <div class="card-header-top">
-                        <span class="project-tag">Python / Lógica POO</span>
+                        <span class="project-tag"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python / Lógica POO</span>
                         <span class="project-status">● ACTIVO</span>
                     </div>
                     <h3>Gestor Logístico Automatizado</h3>
                     <p>Aplicación desarrollada en Python aplicando lógica algorítmica para el control de inventario y optimización de flujos de datos.</p>
-                    <a href="https://github.com/Acordeuss" target="_blank" class="card-link">Ver en GitHub &rarr;</a>
+                    <a href="https://github.com/Acordeuss" target="_blank" rel="noopener noreferrer" class="card-link">Ver en GitHub &rarr;</a>
                 </article>
 
+                <!-- Proyecto 2: Kotlin / Android -->
                 <article class="card glass-card project-card reveal">
                     <div class="card-header-top">
-                        <span class="project-tag">Kotlin / Android</span>
+                        <span class="project-tag"><svg title="Kotlin" style="width: 1rem; height: 1rem; fill: #7F52FF; vertical-align: middle; margin-right: 4px;" viewBox="0 0 24 24"><path d="M24 24H0V0h24L12 12Z"/></svg> Kotlin / Android</span>
                         <span class="project-status online">● EN DESARROLLO</span>
                     </div>
                     <h3>App Móvil de Gestión</h3>
                     <p>Proyecto para entornos móviles aplicando características de Null Safety, layouts estructurados y lógica en Kotlin.</p>
-                    <a href="https://github.com/Acordeuss" target="_blank" class="card-link">Ver en GitHub &rarr;</a>
+                    <a href="https://github.com/Acordeuss" target="_blank" rel="noopener noreferrer" class="card-link">Ver en GitHub &rarr;</a>
                 </article>
             </div>
         </section>
 
-        <!-- CONTACTO -->
+      <!-- SECCIÓN 05: CONTACTO Y FORMULARIO -->
         <section class="seccion contacto-section" id="contacto">
             <div class="contact-box glass-card reveal">
                 <span class="section-num">05. CONTACTO</span>
                 <h2>¿Tienes un proyecto, práctica académica o propuesta? <span>Hablemos.</span></h2>
                 
                 <div class="contact-grid">
+                    <!-- Información directa de contacto -->
                     <div class="contact-info">
                         <h3>Información Directa</h3>
-                        <p><strong>Correo Electrónico:</strong><br><a href="mailto:acordeusleal@outlook.es">acordeusleal@outlook.es</a></p>
-                        <p><strong>Teléfono / WhatsApp:</strong><br><a href="tel:+56996359926">+56 9 9635 9926</a></p>
-                        <p><strong>Ubicación:</strong><br>Puerto Montt / Puerto Varas, Región de Los Lagos, Chile</p>
+                        <p class="contact-desc">Si prefieres la comunicación inmediata o agendar una reunión, contáctame libremente a través de cualquiera de estas vías directas:</p>
+                        
+                        <div class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Correo Electrónico:</strong>
+                                <a href="mailto:acordeusleal@outlook.es">acordeusleal@outlook.es</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Teléfono / WhatsApp:</strong>
+                                <a href="tel:+56996359970">+56 9 9635 9970</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <span>Puerto Montt / Puerto Varas, Región de Los Lagos, Chile</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta extra de estado/disponibilidad para rellenar vacíos -->
+                        <div class="status-banner">
+                            <span class="status-dot"></span>
+                            <div>
+                                <strong>Disponibilidad Inmediata</strong>
+                                <p>Abierto a proyectos de software, desarrollo web/móvil y oportunidades en el sector acuícola.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <form action="mailto:acordeusleal@outlook.es" method="POST" enctype="text/plain" class="contact-form">
+                    <!-- Formulario de contacto -->
+                    <form id="contact-form" action="https://formspree.io/f/xnpqjpoz" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o empresa" required>
+                            <input type="text" id="nombre" name="name" placeholder="Tu nombre o empresa" required>
                         </div>
                         <div class="form-group">
                             <label for="correo">Tu Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required>
+                            <input type="email" id="correo" name="_replyto" placeholder="tu.correo@ejemplo.com" required>
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                            <textarea id="mensaje" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Enviar Correo Directo</button>
+
+                        <!-- Asunto personalizado para Formspree -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web (CLT)">
+
+                        <!-- Botón de envío -->
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Enviar Mensaje Directo</button>
+                        
+                        <!-- Contenedor para mostrar mensajes de confirmación o error -->
+                        <div id="form-status" class="form-status" style="margin-top: 1rem; display: none;"></div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Pie de página (Footer) con información sobre derechos de autor y contexto regional -->
     <footer class="footer">
         <p>&copy; 2026 Carlos Leal Téllez • Portafolio de Informática e Innovación desde la Región de Los Lagos, Chile.</p>
     </footer>
 
+    <!-- Script de JavaScript principal cargado al final del documento para no bloquear el renderizado del DOM -->
     <script src="script.js"></script>
 </body>
 </html>
